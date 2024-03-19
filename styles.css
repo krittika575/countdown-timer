@@ -1,0 +1,401 @@
+/* Your CSS styles here */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  color:#70a4f8;
+}
+
+body {
+  overflow: visible;
+  font-family: "Inconsolata", monospace;
+  background-color: rgb(255, 255, 255);
+  /*background-image: url(bgv.mp4);*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-image: fill 0 linear-gradient(#0001,#000);
+  color: #70a4f8;
+  
+}
+
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+}
+
+.header {
+  position: relative;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  flex: 1;
+}
+
+.timer-buttons {
+  display:flex;
+  gap: 50px;
+  flex-direction: row;
+  position: absolute;
+  left: 10%;
+  top: 470%;
+}
+
+.timer-button {
+  width: 200px;
+  height: 50px;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0.15rem solid rgb(255, 255, 255);
+  color: #70a4f8;
+  /*background-image: url(gif1.gif);*/
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px #00e1ff;
+ font-weight: bold;
+ border: 10px solid #edfdff;
+ border-radius: 10px;
+  font: 2.1rem "Inconsolata", monospace;
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  border: 5px solid #edfdff;
+  border-radius: 10px;
+}
+
+
+.timer-button:hover {
+  background-color: #6ac5da;
+  box-shadow: 0 0 50px #00e1ff;
+}
+
+.timer-button:active {
+  background-color: #62d7d7;
+}
+
+
+
+.display-remaining-time {
+  font-size: 23rem; /* Increase the font size as needed */
+  position:absolute;
+  left: 17%;
+  top: 10%;
+  align-items: center;
+  color:#f0e5e5;
+  font-weight: bold;
+  text-shadow: 5px 5px #00e1ff;
+  /*border: 10px solid #edfdff;
+  border-radius: 10px;*/
+/*
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);*/
+}
+
+.alarm{
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Add align-items property */
+  position: absolute;
+  top:775%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 80%;
+}
+
+#alarmSoundSelect:hover {
+  background-color: #62a0a0;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+#alarmSoundSelect{
+  height: 50px;
+  width: 200px;
+  background-color: #ffffff;
+  color: #70a4f8;
+  border: 5px solid #edfdff;
+  border-radius: 10px;
+  text-shadow: 1px 1px #00e1ff;
+  font-size: large;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  position: absolute;
+  left: 48%;
+  top: 470px;
+  transform: translateX(-50%);
+  height: 70px;
+  width: 200px;
+  background-color: #edfdff;
+  color: #70a4f8;
+  font-weight: bolder;
+  text-shadow: 1px 1px #00e1ff;
+}
+
+
+input {
+  user-select: none;
+  text-align: center;
+  text-indent: 1rem;
+  transition: all 0.2s ease;
+  border: 0.1rem solid rgba(42, 85, 88, 0.615);
+  font: 2rem "Inconsolata", monospace;
+  color: #70a4f8;
+  background-color: #ffffff;
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+  font-weight: bolder;
+  border: 5px solid #edfdff;
+ /* background-image: url(gif1.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;*/
+ font-weight: bold;
+ text-shadow: 1px 1px #00e1ff;
+}
+
+input:focus {
+  background-color:#6dcacf;
+  box-shadow: 0 0 50px #00e1ff;
+  font-weight: bolder;
+}
+
+input::placeholder {
+  color: #70a4f8;
+  font-weight: bolder;
+  text-shadow: 1px 1px #00e1ff;
+}
+
+#save{
+  position: absolute;
+  top: 18%;
+  left: 120%;
+  width: 100px;
+}
+
+#saveBtn{
+  width: 200px;
+  height: 50px;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0.15rem solid rgb(255, 255, 255);
+  color: #70a4f8;
+  /*background-image: url(gif1.gif);*/
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-shadow: 1px 1px #00e1ff;
+ font-weight: bold;
+ border: 10px solid #edfdff;
+ border-radius: 10px;
+  font: 2.1rem "Inconsolata", monospace;
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  border: 5px solid #edfdff;
+  border-radius: 10px;
+}
+
+#saveBtn:hover {
+  background-color: #62a0a0;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+.saved-time {
+  width: 200px;
+  height: 50px;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0.15rem solid rgb(255, 255, 255);
+  /*background-image: url(gif1.gif);*/
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ color:#70a4f8;
+ font-weight: bold;
+ text-shadow: 1px 1px #00e1ff;
+ border-radius: 5px;
+  font: 2.1rem "Inconsolata", monospace;
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  border: 2px solid #edfdff;
+  border-radius: 10px;
+
+}
+
+#interval{
+  position: absolute;
+  top:150%;
+  left:120%;
+  color:#70a4f8 ;
+  
+}
+
+
+.delete-timer {
+  background-color: #00ddff;
+  color: #70a4f8;
+  text-shadow: 1px 1px #00e1ff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  position: absolute;
+  top: 70%;
+  left: 130%;
+}
+
+.delete-timer:hover {
+  background-color: #68a7aa;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+
+/* Add these styles to align buttons to center */
+.btn {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Add align-items property */
+  position: absolute;
+  top:300%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 80%;
+}
+
+#startBtn , #pauseBtn , #resumeBtn , #cancelBtn,#dismissBtn,#resetBtn {
+  width: 100%;
+  height: 80%;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 0 3rem;
+  border: 0.1rem solid rgb(255, 255, 255);
+  color: #ffffff;
+  /*background-image: url(gif1.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;*/
+  background-color: #ffffff;
+ color:#70a4f8;
+ font-weight: bolder;
+ text-shadow: 1px 1px #00e1ff;
+ border: 5px solid #edfdff;
+ border-radius: 10%;
+  font: 2.1rem "Inconsolata", monospace;
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+#startBtn:hover {
+  background-color: #62a0a0;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+#pauseBtn:hover {
+  background-color: #62a0a0;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+#resumeBtn:hover {
+  background-color: #62a0a0;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+#cancelBtn:hover {
+  background-color: #62a0a0;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+#dismissBtn {
+  background-color: #62a0a0; 
+  color: #000000;
+}
+
+#dismissBtn:hover {
+  background-color: #62a0a0;
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+.box2{
+  border: 2px solid #edfdff;
+  border-radius: 10px;
+}
+
+
+::selection {
+  color: #2a3ebc;
+  background-color: #23becc;
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 6px;
+  }
+
+  header {
+    height: 7vh;
+  }
+
+  .display {
+    min-height: 93vh;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 4.5px;
+  }
+}
+
+.hidden {
+  display: none;
+}

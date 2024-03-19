@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- title -->
+    <title>Countdown Timer</title>
+
+    <!-- required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Countdown timer with customizable time intervals and sound alerts."/>
+    <meta name="author" content="Debug dynamos"/>
+    <meta name="keywords" content="timer,countdown timer"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7ba8c6" />
+
+    <!-- favicon -->
+    <link rel="icon" href="fav.png"/>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+
+    <!-- style -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="bgv5.mp4" type="video/mp4">
+      </video>
+
+<div class="timer">
+    <div class="header">
+        <div id="box2">
+        <div class="timer-buttons">
+            <button class="timer-button" data-seconds="10" type="button">
+                10 Secs
+            </button>
+            <button class="timer-button" data-seconds="300" type="button">
+                 5 MIN
+            </button>
+            <button class="timer-button" data-seconds="900" type="button">
+               15 MIN
+            </button>
+            <button class="timer-button" data-seconds="1200" type="button">
+              20 MIN
+            </button>
+            <button class="timer-button" data-seconds="3600" type="button">
+                60 MIN
+            </button>
+            
+        </div>
+    </div>
+    <div class="alarm">
+        
+        <!-- Add an input field for uploading a custom sound file -->
+<input type="file" id="customSoundFile" accept=".mp3,.wav">
+
+<!-- Add a dropdown menu for selecting alarm sounds -->
+<select id="alarmSoundSelect">
+    <option value="alarm.mp3">Alarm Sound 1</option>
+    <option value="alarm1.wav">Alarm Sound 2</option>
+    <option value="alarm2.wav">Alarm Sound 3</option>
+    <option value="alarm3.wav">Alarm Sound 4</option>
+    <option value="custom">Custom Sound</option>
+</select>
+    </div>
+    <div id="box3">
+        <form id="form">
+            <input
+                    type="text"
+                    id="input"
+                    autocomplete="off"
+                    placeholder="HH : MM : SS"
+                    maxlength="8"
+                    pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}"
+            />
+            <div id="save">
+            <button id="saveBtn" type="button">Save Timer</button>
+            <div id="savedTimersContainer"></div>
+        </div>
+        <div  id="interval">
+        <h2>Choose Timer Interval</h2>
+        <!-- Dropdown menu for selecting interval -->
+        <label for="intervalSelect">Select Interval:</label>
+        <select id="intervalSelect">
+          <option value="05">05 seconds</option>
+          <option value="30">30 seconds</option>
+          <option value="60">1 minute</option>
+          <option value="120">2 minutes</option>
+          <option value="300">5 minutes</option>
+          <!-- Add more options as needed -->
+        </select>
+    </div>
+
+            <div class="btn">
+                <button id="startBtn" type="button">START</button>
+                <button id="pauseBtn" class="hidden" type="button">PAUSE</button>
+                <button id="resumeBtn" class="hidden" type="button">RESUME</button>
+                <button id="cancelBtn" class="hidden" type="button">CANCEL</button>
+                <button id="dismissBtn" type="button">STOP</button>
+                <button id="resetBtn" class="timer-button hidden">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="box">
+<div class="display">
+    <div id="remainingTime" class="display-remaining-time"></div>
+    <div class="display-end-time"></div>
+</div>
+</div>
+
+</div>
+<audio id="buzzer" preload="auto" src="alarm.mp3"></audio>
+<audio preload="auto" id="sound">
+    <source src="alarm.mp3" />
+</audio>
+<!-- javascript -->
+<script src="script.js"></script>
+</body>
+</html>
